@@ -3,8 +3,13 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
+import { enableScreens } from 'react-native-screens';
 
 import MealsNavigator from './navigation/MealsNavigator';
+
+
+// useScreens is more efficient; uses UIViewController (IOS) for Fragment (Android) under the hood
+enableScreens();
 
 const fetchFonts = () => {
   return Font.loadAsync({
